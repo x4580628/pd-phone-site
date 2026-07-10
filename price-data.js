@@ -1,6 +1,6 @@
 window.PD_PRICE_DATA = {
   usedBuyback: {
-    updated: "2026/07/09",
+    updated: "2026/07/10",
     categories: [
       {
         id: "iphone",
@@ -15,7 +15,7 @@ window.PD_PRICE_DATA = {
             { model: "iPhone 17 E", prices: ["", "", "15,000", "16,500", ""], note: "" },
             { model: "iPhone Air", prices: ["", "", "22,000", "25,000", ""], note: "" },
             { model: "iPhone 17 Pro", prices: ["", "", "30,000", "33,000", ""], note: "" },
-            { model: "iPhone 17 Pro Max", prices: ["", "", "35,000", "38,000", "39,000"], note: "100下34 / 100上35" }
+            { model: "iPhone 17 Pro Max", prices: ["", "", "35,000", "38,000", "39,000"], note: "" }
           ]},
           { name: "iPhone 16", rows: [
             { model: "iPhone 16", prices: ["", "14,000", "15,500", "16,000", ""], note: "" },

@@ -219,6 +219,68 @@ p {
   font-weight: 800;
 }
 
+body[data-category-filter="iphone"] .price-table {
+  width: max-content;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+body[data-category-filter="iphone"] .price-table th:first-child,
+body[data-category-filter="iphone"] .price-table td:first-child {
+  width: 260px;
+  min-width: 260px;
+}
+
+body[data-category-filter="iphone"] .price-table th:not(:first-child):not(:last-child),
+body[data-category-filter="iphone"] .price-table td:not(:first-child):not(:last-child) {
+  width: 132px;
+  min-width: 132px;
+}
+
+body[data-category-filter="iphone"] .price-table th:last-child,
+body[data-category-filter="iphone"] .price-table td:last-child {
+  width: 132px;
+  min-width: 132px;
+}
+
+body[data-category-filter="iphone"] .matrix-table th,
+body[data-category-filter="iphone"] .matrix-table td {
+  text-align: right;
+}
+
+body[data-category-filter="iphone"] .matrix-table th:first-child,
+body[data-category-filter="iphone"] .matrix-table td:first-child {
+  text-align: left;
+}
+
+body[data-category-filter="ipad,macbook"] .price-table {
+  width: max-content;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+body[data-category-filter="ipad,macbook"] .price-table th:first-child,
+body[data-category-filter="ipad,macbook"] .price-table td:first-child {
+  width: 280px;
+  min-width: 280px;
+}
+
+body[data-category-filter="ipad,macbook"] .price-table th:not(:first-child),
+body[data-category-filter="ipad,macbook"] .price-table td:not(:first-child) {
+  width: 118px;
+  min-width: 118px;
+}
+
+body[data-category-filter="ipad,macbook"] .matrix-table th,
+body[data-category-filter="ipad,macbook"] .matrix-table td {
+  text-align: right;
+}
+
+body[data-category-filter="ipad,macbook"] .matrix-table th:first-child,
+body[data-category-filter="ipad,macbook"] .matrix-table td:first-child {
+  text-align: left;
+}
+
 @media (max-width: 700px) {
   .market-panel { padding-top: 0; }
   .category-tabs {
@@ -277,5 +339,94 @@ p {
   .note-cell {
     min-width: 72px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  body[data-category-filter="iphone"] .market-card {
+    padding: 14px 10px;
+    border-radius: 16px;
+  }
+
+  body[data-category-filter="iphone"] .table-wrap {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  body[data-category-filter="iphone"] .price-table,
+  body[data-category-filter="iphone"] .price-table thead,
+  body[data-category-filter="iphone"] .price-table tbody,
+  body[data-category-filter="iphone"] .price-table tr,
+  body[data-category-filter="iphone"] .price-table th,
+  body[data-category-filter="iphone"] .price-table td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  body[data-category-filter="iphone"] .price-table thead {
+    display: none;
+  }
+
+  body[data-category-filter="iphone"] .price-table tbody {
+    display: grid;
+    gap: 10px;
+  }
+
+  body[data-category-filter="iphone"] .price-table tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 12px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  body[data-category-filter="iphone"] .price-table td {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+  }
+
+  body[data-category-filter="iphone"] .price-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  body[data-category-filter="iphone"] .model-name {
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  body[data-category-filter="iphone"] .model-name::before {
+    display: none;
+  }
+
+  body[data-category-filter="iphone"] .price {
+    min-height: 48px;
+    padding: 8px 10px;
+    background: var(--soft);
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  body[data-category-filter="iphone"] .note-cell {
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding-top: 6px;
+    color: var(--muted);
   }
 }

@@ -79,8 +79,8 @@
 
     table.querySelector("thead").innerHTML = `<tr><th>型號</th>${capacityIndexes.map((index) => `<th>${capacities[index]}</th>`).join("")}${hasNotes ? "<th>備註</th>" : ""}</tr>`;
     body.innerHTML = group.rows.map((row) => {
-      const prices = capacityIndexes.map((index) => `<td class="price">${row.prices[index] || empty}</td>`).join("");
-      return `<tr><td class="model-name">${row.model}</td>${prices}${hasNotes ? `<td class="note-cell">${row.note || empty}</td>` : ""}</tr>`;
+      const prices = capacityIndexes.map((index) => `<td class="price" data-label="${capacities[index]}">${row.prices[index] || empty}</td>`).join("");
+      return `<tr><td class="model-name" data-label="型號">${row.model}</td>${prices}${hasNotes ? `<td class="note-cell" data-label="備註">${row.note || empty}</td>` : ""}</tr>`;
     }).join("");
 
     if (date) date.textContent = `更新日期：${section.updated}`;
