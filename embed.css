@@ -107,9 +107,9 @@ body {
   display: grid;
   justify-items: center;
   text-align: center;
-  gap: 8px;
-  margin-bottom: 22px;
-  padding-bottom: 18px;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -235,8 +235,8 @@ p {
     padding: 18px 14px;
   }
   .market-heading {
-    margin-bottom: 16px;
-    padding-bottom: 14px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
   }
   h1 {
     font-size: 30px;
