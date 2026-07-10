@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: #111;
+        background: transparent;
+        font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+        line-height: 1.6;
+      }
+      .deduct-wrap {
+        width: min(100%, 900px);
+        margin: 0 auto;
+        padding: 10px 8px;
+      }
+      .deduct-box {
+        padding: 18px;
+        background: #f5f5f7;
+        border: 1px solid #e5e5ea;
+        border-radius: 16px;
+      }
+      .deduct-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+      .deduct-kicker {
+        margin: 0 0 4px;
+        color: #0071e3;
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .deduct-title {
+        margin: 0;
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .deduct-subtitle {
+        max-width: 520px;
+        margin: 6px 0 0;
+        color: #6e6e73;
+        font-size: 14px;
+      }
+      .deduct-badge {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        color: #d93025;
+        background: #fff;
+        border: 1px solid #f0d5d2;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+      .deduct-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .deduct-list li {
+        position: relative;
+        padding-left: 18px;
+        color: #3d3d3f;
+        font-size: 15px;
+      }
+      .deduct-list li::before {
+        content: "";
+        position: absolute;
+        top: 0.72em;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        background: #111;
+        border-radius: 999px;
+      }
+      .deduct-foot {
+        margin: 14px 0 0;
+        padding-top: 12px;
+        color: #6e6e73;
+        border-top: 1px solid #dedee3;
+        font-size: 13px;
+      }
+      @media (max-width: 680px) {
+        .deduct-box { padding: 16px; }
+        .deduct-head { display: block; }
+        .deduct-badge {
+          display: inline-block;
+          margin-top: 10px;
+        }
+        .deduct-list { grid-template-columns: 1fr; }
+        .deduct-title { font-size: 22px; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="deduct-wrap" aria-label="簡易扣價說明">
+      <div class="deduct-box">
+        <div class="deduct-head">
+          <div>
+            <p class="deduct-kicker">檢測提醒</p>
+            <h2 class="deduct-title">以下狀況可能影響收購價</h2>
+            <p class="deduct-subtitle">線上報價為參考，實際價格會依門市檢測結果確認。</p>
+          </div>
+          <span class="deduct-badge">現場檢測為準</span>
+        </div>
+
+        <ul class="deduct-list">
+          <li>螢幕破裂、亮線、黑點、觸控異常</li>
+          <li>機身凹傷、背板破裂、鏡頭損傷</li>
+          <li>電池健康度偏低、膨脹或無法充電</li>
+          <li>Face ID、相機、喇叭、麥克風異常</li>
+          <li>副廠零件、泡水、主機板維修紀錄</li>
+          <li>Apple ID 未登出、遺失模式或裝置鎖定</li>
+        </ul>
+
+        <p class="deduct-foot">若機況與線上描述不同，現場報價可能會調整；確認價格後再成交，不強迫出售。</p>
+      </div>
+    </section>
+  </body>
+</html>

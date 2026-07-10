@@ -228,20 +228,20 @@ body[data-category-filter="iphone"] .price-table {
 
 body[data-category-filter="iphone"] .price-table th:first-child,
 body[data-category-filter="iphone"] .price-table td:first-child {
-  width: 260px;
-  min-width: 260px;
+  width: 190px;
+  min-width: 190px;
 }
 
 body[data-category-filter="iphone"] .price-table th:not(:first-child):not(:last-child),
 body[data-category-filter="iphone"] .price-table td:not(:first-child):not(:last-child) {
-  width: 132px;
-  min-width: 132px;
+  width: 118px;
+  min-width: 118px;
 }
 
 body[data-category-filter="iphone"] .price-table th:last-child,
 body[data-category-filter="iphone"] .price-table td:last-child {
-  width: 132px;
-  min-width: 132px;
+  width: 118px;
+  min-width: 118px;
 }
 
 body[data-category-filter="iphone"] .matrix-table th,
@@ -263,14 +263,14 @@ body[data-category-filter="ipad,macbook"] .price-table {
 
 body[data-category-filter="ipad,macbook"] .price-table th:first-child,
 body[data-category-filter="ipad,macbook"] .price-table td:first-child {
-  width: 300px;
-  min-width: 300px;
+  width: 230px;
+  min-width: 230px;
 }
 
 body[data-category-filter="ipad,macbook"] .price-table th:not(:first-child),
 body[data-category-filter="ipad,macbook"] .price-table td:not(:first-child) {
-  width: 128px;
-  min-width: 128px;
+  width: 112px;
+  min-width: 112px;
 }
 
 body[data-category-filter="ipad,macbook"] .matrix-table th,

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: #111;
+        background: transparent;
+        font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+        line-height: 1.6;
+      }
+      .flow-wrap {
+        width: min(100%, 980px);
+        margin: 0 auto;
+        padding: 18px 10px;
+      }
+      .flow-head {
+        margin-bottom: 22px;
+        text-align: center;
+      }
+      .flow-kicker {
+        margin: 0 0 6px;
+        color: #0071e3;
+        font-size: 14px;
+        font-weight: 800;
+      }
+      .flow-title {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.15;
+        letter-spacing: 0;
+      }
+      .flow-subtitle {
+        max-width: 680px;
+        margin: 12px auto 0;
+        color: #6e6e73;
+        font-size: 16px;
+      }
+      .flow-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .flow-card {
+        position: relative;
+        min-height: 190px;
+        padding: 22px;
+        background: #fff;
+        border: 1px solid #e5e5ea;
+        border-radius: 18px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      }
+      .flow-no {
+        display: inline-grid;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 16px;
+        place-items: center;
+        color: #fff;
+        background: #111;
+        border-radius: 999px;
+        font-weight: 900;
+      }
+      .flow-card h3 {
+        margin: 0 0 8px;
+        font-size: 21px;
+        line-height: 1.25;
+      }
+      .flow-card p {
+        margin: 0;
+        color: #6e6e73;
+        font-size: 15px;
+      }
+      .flow-note {
+        margin-top: 18px;
+        padding: 16px 18px;
+        color: #3d3d3f;
+        background: #f5f5f7;
+        border: 1px solid #e5e5ea;
+        border-radius: 16px;
+        font-size: 15px;
+      }
+      @media (max-width: 760px) {
+        .flow-wrap { padding: 12px 6px; }
+        .flow-grid { grid-template-columns: 1fr; }
+        .flow-card {
+          min-height: auto;
+          padding: 18px;
+        }
+        .flow-title { font-size: 30px; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="flow-wrap" aria-label="手機收購流程">
+      <div class="flow-head">
+        <p class="flow-kicker">收購流程</p>
+        <h2 class="flow-title">5分鐘快速估價，現場檢測後確認成交</h2>
+        <p class="flow-subtitle">先傳設備資料取得參考行情，再到門市檢測確認最終價格，流程透明、不強迫成交。</p>
+      </div>
+
+      <div class="flow-grid">
+        <article class="flow-card">
+          <span class="flow-no">01</span>
+          <h3>傳送設備資料</h3>
+          <p>提供型號、容量、顏色、外觀照片、電池健康度，以及是否維修過或功能異常。</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-no">02</span>
+          <h3>初步回覆行情</h3>
+          <p>依目前市場行情先給參考收購價，讓你不用白跑一趟，也能先評估是否出售。</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-no">03</span>
+          <h3>門市現場檢測</h3>
+          <p>檢查螢幕、相機、Face ID、充電、喇叭、外觀、電池與帳號狀態，確認實際機況。</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-no">04</span>
+          <h3>確認最終價格</h3>
+          <p>檢測後說明價格差異原因，價格確認後才成交，若不滿意也可以直接取回。</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-no">05</span>
+          <h3>協助資料處理</h3>
+          <p>可提醒你備份資料、登出 Apple ID、清除裝置內容，交易前把隱私處理好。</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-no">06</span>
+          <h3>完成收購付款</h3>
+          <p>確認成交後完成付款，也可現場詢問換購二手機、新機或無卡分期方案。</p>
+        </article>
+      </div>
+
+      <div class="flow-note">實際收購價格會依機況、保固、維修紀錄、配件與市場行情調整，最終價格以門市檢測為準。</div>
+    </section>
+  </body>
+</html>
