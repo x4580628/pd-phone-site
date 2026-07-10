@@ -11,14 +11,35 @@
   };
 
   const sectionFor = (type) => data[type === "new" ? "newBuyback" : "usedBuyback"];
-  const activeCategory = (section, type) => section.categories ? section.categories[state[type].categoryIndex] || section.categories[0] : section;
+  const categoryFilter = (type) => {
+    const filter = document.body.dataset.categoryFilter || document.querySelector(`[data-category-tabs="${type}"]`)?.dataset.categoryFilter || "";
+    return filter.split(",").map((item) => item.trim()).filter(Boolean);
+  };
+  const visibleCategories = (section, type) => {
+    if (!section?.categories) return [];
+    const allowed = categoryFilter(type);
+    return allowed.length ? section.categories.filter((category) => allowed.includes(category.id)) : section.categories;
+  };
+  const activeCategory = (section, type) => {
+    if (!section.categories) return section;
+    const categories = visibleCategories(section, type);
+    return categories[state[type].categoryIndex] || categories[0] || section.categories[0];
+  };
 
   function renderCategoryTabs(type) {
     const section = sectionFor(type);
     const tabs = document.querySelector(`[data-category-tabs="${type}"]`);
     if (!tabs || !section?.categories) return;
 
-    tabs.innerHTML = section.categories.map((category, index) => {
+    const categories = visibleCategories(section, type);
+    if (categories.length <= 1) {
+      tabs.innerHTML = "";
+      tabs.hidden = true;
+      return;
+    }
+
+    tabs.hidden = false;
+    tabs.innerHTML = categories.map((category, index) => {
       const active = index === state[type].categoryIndex ? " active" : "";
       const icon = icons[category.icon] || "";
       return `<button class="category-tab${active}" type="button" data-category="${index}" data-kind="${type}"><span class="category-icon">${icon}</span>${category.name}</button>`;
@@ -36,6 +57,11 @@
     const category = activeCategory(section, type);
     const group = category.groups[state[type].groupIndex] || category.groups[0];
     const capacities = category.capacities || section.capacities;
+    const visibleCapacityIndexes = capacities
+      .map((_, index) => index)
+      .filter((index) => group.rows.some((row) => row.prices[index]));
+    const capacityIndexes = visibleCapacityIndexes.length ? visibleCapacityIndexes : capacities.map((_, index) => index);
+    const hasNotes = group.rows.some((row) => row.note);
     const label = document.querySelector("[data-market-label]");
     const title = document.querySelector("[data-market-title]");
     const subtitle = document.querySelector("[data-market-subtitle]");
@@ -51,10 +77,10 @@
       return `<button class="tab${active}" type="button" data-group="${index}" data-kind="${type}">${item.name}</button>`;
     }).join("");
 
-    table.querySelector("thead").innerHTML = `<tr><th>型號</th>${capacities.map((capacity) => `<th>${capacity}</th>`).join("")}<th>備註</th></tr>`;
+    table.querySelector("thead").innerHTML = `<tr><th>型號</th>${capacityIndexes.map((index) => `<th>${capacities[index]}</th>`).join("")}${hasNotes ? "<th>備註</th>" : ""}</tr>`;
     body.innerHTML = group.rows.map((row) => {
-      const prices = row.prices.map((price) => `<td class="price">${price || empty}</td>`).join("");
-      return `<tr><td class="model-name">${row.model}</td>${prices}<td class="note-cell">${row.note || empty}</td></tr>`;
+      const prices = capacityIndexes.map((index) => `<td class="price">${row.prices[index] || empty}</td>`).join("");
+      return `<tr><td class="model-name">${row.model}</td>${prices}${hasNotes ? `<td class="note-cell">${row.note || empty}</td>` : ""}</tr>`;
     }).join("");
 
     if (date) date.textContent = `更新日期：${section.updated}`;

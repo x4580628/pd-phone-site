@@ -26,6 +26,7 @@ body {
 
 .market-panel {
   padding: 8px 0 0;
+  overflow: hidden;
 }
 
 .category-tabs {
@@ -41,6 +42,16 @@ body {
   border: 1px solid var(--line);
   border-radius: 999px;
   box-shadow: var(--shadow);
+  scrollbar-width: none;
+}
+
+.category-tabs[hidden] {
+  display: none;
+}
+
+.category-tabs::-webkit-scrollbar,
+.series-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .category-tab {
@@ -160,8 +171,9 @@ p {
 
 .price-table {
   width: 100%;
-  min-width: 760px;
+  min-width: 0;
   border-collapse: collapse;
+  font-size: 15px;
 }
 
 .price-table th {
@@ -197,7 +209,7 @@ p {
 }
 
 .note-cell {
-  min-width: 120px;
+  min-width: 92px;
   color: var(--muted);
   white-space: normal;
 }
@@ -220,5 +232,50 @@ p {
   }
   .market-card {
     border-radius: 18px;
+    padding: 18px 14px;
+  }
+  .market-heading {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .series-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .tab {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 9px 18px;
+  }
+  .table-wrap {
+    border-radius: 14px;
+  }
+  .price-table {
+    font-size: 13px;
+  }
+  .price-table th,
+  .price-table td {
+    padding: 10px 8px;
+  }
+  .model-name {
+    min-width: 92px;
+    white-space: normal;
+    line-height: 1.25;
+  }
+  .matrix-table th,
+  .matrix-table td {
+    white-space: normal;
+  }
+  .price {
+    white-space: nowrap;
+  }
+  .note-cell {
+    min-width: 72px;
+    font-size: 12px;
   }
 }
