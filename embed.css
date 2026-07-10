@@ -223,6 +223,7 @@ body[data-category-filter="iphone"] .price-table {
   width: max-content;
   min-width: 0;
   margin: 0 auto;
+  table-layout: fixed;
 }
 
 body[data-category-filter="iphone"] .price-table th:first-child,
@@ -257,18 +258,19 @@ body[data-category-filter="ipad,macbook"] .price-table {
   width: max-content;
   min-width: 0;
   margin: 0 auto;
+  table-layout: fixed;
 }
 
 body[data-category-filter="ipad,macbook"] .price-table th:first-child,
 body[data-category-filter="ipad,macbook"] .price-table td:first-child {
-  width: 280px;
-  min-width: 280px;
+  width: 300px;
+  min-width: 300px;
 }
 
 body[data-category-filter="ipad,macbook"] .price-table th:not(:first-child),
 body[data-category-filter="ipad,macbook"] .price-table td:not(:first-child) {
-  width: 118px;
-  min-width: 118px;
+  width: 128px;
+  min-width: 128px;
 }
 
 body[data-category-filter="ipad,macbook"] .matrix-table th,

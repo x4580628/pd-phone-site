@@ -143,7 +143,7 @@ window.PD_PRICE_DATA = {
             { model: "MacBook Pro M3 14", prices: ["", "32,000", "38,000", "45,000"], note: "範例" },
             { model: "MacBook Pro M2 14", prices: ["", "28,000", "34,000", "40,000"], note: "範例" }
           ]},
-          { name: "Neo 系列", rows: [
+          { name: "Neo", rows: [
             { model: "MacBook Neo", prices: ["請維護", "請維護", "請維護", "請維護"], note: "" },
             { model: "MacBook Neo Pro", prices: ["請維護", "請維護", "請維護", "請維護"], note: "" }
           ]}
